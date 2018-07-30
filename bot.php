@@ -54,7 +54,7 @@
         $arrayPostData['messages'][1]['stickerId'] = "131";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else {
+    else if($messages == "video"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "video";
         $arrayPostData['messages'][0]['originalContentUrl'] = "https://youtu.be/IHNzOHi8sJs?list=LL4ILOWPeQcmiiZpEZJ6-U8Q/original.mp4";
