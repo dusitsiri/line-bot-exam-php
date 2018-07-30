@@ -1,18 +1,12 @@
 <?php // callback.php
+    $access_token = 'A0sMe4LtlYhOSY8f3hDTsuR8kRJ+vypeDOcIDWIab9Wh2zlB8WdHjH0ON7yLrEWQ60pN2QTN/dh35awNP9p1mCiWezqUQ4lAA8maOCtg1l2Jv9UjmX64649WHzVEUEqIPY0sL9A5EkxDy7RdmJ5w6gdB04t89/1O/w1cDnyilFU=';
 
-require "vendor/autoload.php";
-require_once('vendor/linecorp/line-bot-sdk/line-bot-sdk-tiny/LINEBotTiny.php');
+    $content = file_get_contents('php://input');
+    $arrayJson = json_decode($content, true);
 
-$access_token = 'A0sMe4LtlYhOSY8f3hDTsuR8kRJ+vypeDOcIDWIab9Wh2zlB8WdHjH0ON7yLrEWQ60pN2QTN/dh35awNP9p1mCiWezqUQ4lAA8maOCtg1l2Jv9UjmX64649WHzVEUEqIPY0sL9A5EkxDy7RdmJ5w6gdB04t89/1O/w1cDnyilFU=';
-
-// Get POST body content
-$content = file_get_contents('php://input');
-// Parse JSON
-$events = json_decode($content, true);
-// Validate parsed JSON data
-$arrayHeader = array();
-$arrayHeader[] = "Content-Type: application/json";
-$arrayHeader[] = "Authorization: Bearer {$accessToken}";
+    $arrayHeader = array();
+    $arrayHeader[] = "Content-Type: application/json";
+    $arrayHeader[] = "Authorization: Bearer {$accessToken}";
     
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
