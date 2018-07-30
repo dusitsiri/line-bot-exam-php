@@ -57,7 +57,8 @@
     else {
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "video";
-        $arrayPostData['messages'][0]['originalContentUrl'] = "https://youtu.be/IHNzOHi8sJs?list=LL4ILOWPeQcmiiZpEZJ6-U8Q";
+        $arrayPostData['messages'][0]['originalContentUrl'] = "https://youtu.be/IHNzOHi8sJs?list=LL4ILOWPeQcmiiZpEZJ6-U8Q/original.mp4";
+        $arrayPostData['messages'][0]['previewImageUrl'] = "https://youtu.be/IHNzOHi8sJs?list=LL4ILOWPeQcmiiZpEZJ6-U8Q/preview.jpg";
         replyMsg($arrayHeader,$arrayPostData);
     }
 function replyMsg($arrayHeader,$arrayPostData){
