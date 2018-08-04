@@ -10,6 +10,8 @@
     
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
+    $arrayPostData['replyToken'] = $message;
+    replyMsg($arrayHeader,$arrayPostData);
 #ตัวอย่าง Message Type "Text"
     if($message == "สวัสดี"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
