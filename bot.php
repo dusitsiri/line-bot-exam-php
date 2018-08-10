@@ -25,7 +25,7 @@
     else if($arrayJson['events'][0]['source']['userId'] == "Uecdf73f5f77c4322a6aec9e8bb599955"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "เงียบก่อน ไอแจมมีไรทักเจ้านายที่แชทแยก";
+        $arrayPostData['messages'][0]['text'] = "เจ้านายไม่อยู่ เชิญไปคุยกับขี้ก่อนนะครับ";
         replyMsg($arrayHeader,$arrayPostData);
         //         $arrayJson['events'][0]['source']['userId']; ใช้ในการระบุไอดีของผู้ใช้ที่ตอบกลับมา
      }
