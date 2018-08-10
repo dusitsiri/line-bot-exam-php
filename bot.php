@@ -23,6 +23,7 @@
         replyMsg($arrayHeader,$arrayPostData);
         //         $arrayJson['events'][0]['source']['userId']; ใช้ในการระบุไอดีของผู้ใช้ที่ตอบกลับมา
      }
+//      else if($arrayJson['events'][0]['message']['text']
    
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
