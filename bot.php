@@ -22,19 +22,23 @@
         $arrayPostData['messages'][0]['text'] = "ครับเจ้านาย";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if($arrayJson['events'][0]['source']['userId'] == "Uecdf73f5f77c4322a6aec9e8bb599955"){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "เจ้านายไม่อยู่ เชิญไปคุยกับขี้ก่อนนะครับ";
-        replyMsg($arrayHeader,$arrayPostData);
-        //         $arrayJson['events'][0]['source']['userId']; ใช้ในการระบุไอดีของผู้ใช้ที่ตอบกลับมา
-     }
-     else if($arrayJson['events'][0]['message']['text'] == "วันนี้วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วัน"){
+    else if($arrayJson['events'][0]['message']['text'] == "วันนี้วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วัน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = date("l")."ครับ";
         replyMsg($arrayHeader,$arrayPostData);
      }
+//     else if($arrayJson['events'][0]['source']['userId'] == "Uecdf73f5f77c4322a6aec9e8bb599955"){
+//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+//         $arrayPostData['messages'][0]['type'] = "text";
+//         $arrayPostData['messages'][0]['text'] = "เจ้านายไม่อยู่ เชิญไปคุยกับขี้ก่อนนะครับ";
+//         replyMsg($arrayHeader,$arrayPostData);
+        //         $arrayJson['events'][0]['source']['userId']; ใช้ในการระบุไอดีของผู้ใช้ที่ตอบกลับมา
+//      }
+    
+//       else if($arrayJson['events'][0]['source']['userId'] == "Ud1794d48c4e3dd1f68cf78f76447f305"){
+          
+//       }
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
