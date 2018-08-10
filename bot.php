@@ -32,7 +32,7 @@
      else if($arrayJson['events'][0]['message']['text'] == "วันนี้วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วัน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "วันนี้วัน: ".date("l");
+        $arrayPostData['messages'][0]['text'] = date("l")."ครับ";
         replyMsg($arrayHeader,$arrayPostData);
      }
 function replyMsg($arrayHeader,$arrayPostData){
