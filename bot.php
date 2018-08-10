@@ -10,10 +10,13 @@
     
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-//     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//     $arrayPostData['messages'][0]['type'] = "text";
-//     $arrayPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrayJson['events'][0]['source']['userId'];
-//     replyMsg($arrayHeader,$arrayPostData);
+    if ($arrayJson['events'][0]['source']['userId'] == "Uecdf73f5f77c4322a6aec9e8bb599955"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "บ่นไรไอ้แจม เงียบปากไว้ไม่งั้นเจ็บ";
+//         $arrayPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrayJson['events'][0]['source']['userId'];
+        replyMsg($arrayHeader,$arrayPostData);
+    }
    
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
