@@ -16,10 +16,16 @@
         $arrayPostData['messages'][0]['text'] = "การบ้าน: คอมบัสโปรเจคกลุ่มเขียนแบบ IQMหารหัสประเทศฯลฯ Compilerทำแบบฝึกหัด Securityยังไม่มีนะ AIอ่านทวนอาทิตย์หน้าจะมีควิซและก็โปรเจคจบจ้าา";
         replyMsg($arrayHeader,$arrayPostData);
     }
+    else if($arrayJson['events'][0]['message']['text'] == "บอท")&&($arrayJson['events'][0]['source']['userId']=="Ue14f54b7c3fe3f2219a3f42c016ab3a7"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "ครับเจ้านาย";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
     else if($arrayJson['events'][0]['source']['userId'] == "Uecdf73f5f77c4322a6aec9e8bb599955"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ";
+        $arrayPostData['messages'][0]['text'] = "เงียบก่อน ไอแจมมีไรทักเจ้านายที่แชทแยก";
         replyMsg($arrayHeader,$arrayPostData);
         //         $arrayJson['events'][0]['source']['userId']; ใช้ในการระบุไอดีของผู้ใช้ที่ตอบกลับมา
      }
