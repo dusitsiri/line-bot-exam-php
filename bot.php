@@ -13,7 +13,7 @@
     if($arrayJson['events'][0]['message']['text'] == "การบ้าน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "การบ้าน: คอมบัสโปรเจคกลุ่มเขียนแบบ IQMหารหัสประเทศฯลฯ Compilerทำแบบฝึกหัด Securityยังไม่มีนะ AIอ่านทวนอาทิตย์หน้าจะมีควิซและก็โปรเจคจบจ้าา" ";
+        $arrayPostData['messages'][0]['text'] = "การบ้าน: คอมบัสโปรเจคกลุ่มเขียนแบบ IQMหารหัสประเทศฯลฯ Compilerทำแบบฝึกหัด Securityยังไม่มีนะ AIอ่านทวนอาทิตย์หน้าจะมีควิซและก็โปรเจคจบจ้าา";
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($arrayJson['events'][0]['source']['userId'] == "Uecdf73f5f77c4322a6aec9e8bb599955"){
