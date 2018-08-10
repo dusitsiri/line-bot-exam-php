@@ -12,7 +12,7 @@
     $message = $arrayJson['events'][0]['message']['text'];
     $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
     $arrayPostData['messages'][0]['type'] = "text";
-    $arrayPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrJson['events'][0]['source']['userId'];
+    $arrayPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ "+$arrJson['events'][0]['source']['userId'];
     replyMsg($arrayHeader,$arrayPostData);
    
 function replyMsg($arrayHeader,$arrayPostData){
