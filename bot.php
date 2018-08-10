@@ -29,8 +29,12 @@
         replyMsg($arrayHeader,$arrayPostData);
         //         $arrayJson['events'][0]['source']['userId']; ใช้ในการระบุไอดีของผู้ใช้ที่ตอบกลับมา
      }
-//      else if($arrayJson['events'][0]['message']['text']
-   
+     else if($arrayJson['events'][0]['message']['text'] == "วันนี้วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วัน"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "วันนี้วัน: ".date("l");
+        replyMsg($arrayHeader,$arrayPostData);
+     }
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
