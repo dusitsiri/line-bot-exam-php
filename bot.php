@@ -10,13 +10,19 @@
     
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-    if ($arrayJson['events'][0]['source']['userId'] == "Uecdf73f5f77c4322a6aec9e8bb599955"){
+    if($arrayJson['events'][0]['message']['text'] == "การบ้าน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "บ่นไรไอ้แจม เงียบปากไว้ไม่งั้นเจ็บ";
-//         $arrayPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ".$arrayJson['events'][0]['source']['userId'];
+        $arrayPostData['messages'][0]['text'] = "การบ้าน: คอมบัสโปรเจคกลุ่มเขียนแบบ IQMหารหัสประเทศฯลฯ Compilerทำแบบฝึกหัด Securityยังไม่มีนะ AIอ่านทวนอาทิตย์หน้าจะมีควิซและก็โปรเจคจบจ้าา" ";
         replyMsg($arrayHeader,$arrayPostData);
     }
+    else if($arrayJson['events'][0]['source']['userId'] == "Uecdf73f5f77c4322a6aec9e8bb599955"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "สวัสดี ID คุณคือ ";
+        replyMsg($arrayHeader,$arrayPostData);
+        //         $arrayJson['events'][0]['source']['userId']; ใช้ในการระบุไอดีของผู้ใช้ที่ตอบกลับมา
+     }
    
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
