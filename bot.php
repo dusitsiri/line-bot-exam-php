@@ -13,7 +13,8 @@
     if($arrayJson['events'][0]['message']['text'] == "การบ้าน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "การบ้าน: คอมบัสโปรเจคกลุ่มเขียนแบบ 
+        $arrayPostData['messages'][0]['text'] = 
+        "การบ้าน: คอมบัสโปรเจคกลุ่มเขียนแบบ 
         IQMหารหัสประเทศฯลฯ + เอาเลขที่อาจารย์ให้ตอนเลิกคลาสมาหาว่าทำยังไงถึงจะไม่เกิน100%
         Compilerทำแบบฝึกหัด2อัน 
         Securityยังไม่มีนะ 
