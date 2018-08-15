@@ -58,6 +58,12 @@
         $arrayPostData['messages'][0]['text'] = "แจมกาก กากแจม";
         replyMsg($arrayHeader,$arrayPostData);
     }
+    else if($arrayJson['events'][0]['message']['text'] == "ด่าแพท" && $arrayJson['events'][0]['source']['userId']=="Ue14f54b7c3fe3f2219a3f42c016ab3a7"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $arrayPostData['messages'][0]['text'] = "ข้าวปลาไม่รู้จักกิน กินขี้ไหม";
+        replyMsg($arrayHeader,$arrayPostData);
+    }
     else if($arrayJson['events'][0]['message']['text'] == "วันนี้วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วัน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
