@@ -91,7 +91,7 @@
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if(strstr($message,"!พี่ตูน" || strstr($message,"!Bodyslam") || strstr($message,"!bodyslam")){
+    else if(strstr($message,"!พี่ตูน") || strstr($message,"!Bodyslam") || strstr($message,"!bodyslam")){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "video";
         $arrayPostData['messages'][0]['originalContentUrl'] = "https://www.youtube.com/embed/yf5JZDCXLG8&list?autoplay=1";
