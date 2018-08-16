@@ -83,6 +83,14 @@
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
+    else if(strstr($message,"!p potato") || strstr($message,"!p Potato") || strstr($message,"!p โปเตโต้")){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $a=array("https://www.youtube.com/watch?v=UHKS37Inpdc&list=PLxLHpLGKZig0G9NvkGYZu4JhcHDyke-Og","https://www.youtube.com/watch?v=re1hIVppuc0","https://www.youtube.com/watch?v=1WMwDuwwAcM","https://www.youtube.com/watch?v=zYNsQ6ibdZs&start_radio=1&list=RDEMmLFELjkoyxs1joagnYi7Lg","https://www.youtube.com/watch?v=zYNsQ6ibdZs&start_radio=1&list=RDEMmLFELjkoyxs1joagnYi7Lg");
+        $random_keys=array_rand($a);
+        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
+        replyMsg($arrayHeader,$arrayPostData);
+    }
     else if($arrayJson['events'][0]['message']['text'] == "วันนี้วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วัน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
