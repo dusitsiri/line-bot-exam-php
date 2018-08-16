@@ -54,7 +54,7 @@
     else if($arrayJson['events'][0]['message']['text'] == "บอท" && $arrayJson['events'][0]['source']['userId']=="Ue14f54b7c3fe3f2219a3f42c016ab3a7"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ครับเจ้านาย";
+        $arrayPostData['messages'][0]['text'] = "ครับ";
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($arrayJson['events'][0]['message']['text'] == "ด่าแจม" && $arrayJson['events'][0]['source']['userId']=="Ue14f54b7c3fe3f2219a3f42c016ab3a7"){
@@ -75,12 +75,31 @@
         $arrayPostData['messages'][1]['stickerId'] = "133";
         replyMsg($arrayHeader,$arrayPostData);
     }
+    else if(strstr($message,"โง่")){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $a=array("ด่าผมโง่ ต่อยกับกูไหม","ด่าใคร","จะวัดป่ะล่ะ","1-1มา","เก็บปากคุณไว้กินข้าวเถอะ");
+        $random_keys=array_rand($a);
+        $arrayPostData['messages'][0]['text'] = $a[$random_keys];
+        replyMsg($arrayHeader,$arrayPostData);
+    }
     else if($arrayJson['events'][0]['message']['text'] == "วันนี้วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วัน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = date("l")."ครับ";
         replyMsg($arrayHeader,$arrayPostData);
      }
+// function generateRandomString($length = 10) {
+//     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//     $charactersLength = strlen($characters);
+//     $randomString = '';
+//     for ($i = 0; $i < $length; $i++) {
+//         $randomString .= $characters[rand(0, $charactersLength - 1)];
+//     }
+//     return $randomString;
+// }
+// echo generateRandomString();
+
 //     else if($arrayJson['events'][0]['source']['userId'] == "Uecdf73f5f77c4322a6aec9e8bb599955"){
 //         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
 //         $arrayPostData['messages'][0]['type'] = "text";
