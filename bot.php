@@ -91,13 +91,11 @@
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
     }
-    else if(strstr($message,"!พี่ตูน") || strstr($message,"!Bodyslam") || strstr($message,"!bodyslam")){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        <iframe width="50" height="50"
-        src = "https://www.youtube.com/embed/yf5JZDCXLG8&list?autoplay=1">
-            </iframe>
-        replyMsg($arrayHeader,$arrayPostData);
-    }
+//     else if(strstr($message,"!พี่ตูน") || strstr($message,"!Bodyslam") || strstr($message,"!bodyslam")){
+//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        
+//         replyMsg($arrayHeader,$arrayPostData);
+//     }
     else if($arrayJson['events'][0]['message']['text'] == "วันนี้วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วัน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
