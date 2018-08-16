@@ -19,6 +19,7 @@
         for($x = 0; $x<$arrlength; $x++){
             $array[$x];
             $arrayPostData['messages'][0]['text'] =  "<br>";
+        }
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($arrayJson['events'][0]['message']['text'] == "Combus" || $arrayJson['events'][0]['message']['text'] ==  "combus" || $arrayJson['events'][0]['message']['text'] ==  "คอมบัส"){
