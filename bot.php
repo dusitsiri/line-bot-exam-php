@@ -13,14 +13,14 @@
     if($arrayJson['events'][0]['message']['text'] == "การบ้าน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-//         $str = "การบ้าน: คอมบัสโปรเจคกลุ่มเขียนแบบ IQMหารหัสประเทศฯลฯ+เอาเลขที่อาจารย์ให้ตอนเลิกคลาสมาหาว่าทำยังไงถึงจะไม่เกิน100% Compilerทำแบบฝึกหัด2อัน Securityยังไม่มีนะ AIอ่านทวนวันศุกร์จะมีควิซ และก็โปรเจคจบจ้าา";
-//         $array = explode(" ",$str);
-//         $arrlength = count($array);
-//         for($x = 0; $x<$arrlength; $x++){
-//             $array[$x];
-//             $arrayPostData['messages'][0]['text'] =  "<br>";
-//             replyMsg($arrayHeader,$arrayPostData);
-//         }
+        $str = "การบ้าน: คอมบัสโปรเจคกลุ่มเขียนแบบ IQMหารหัสประเทศฯลฯ+เอาเลขที่อาจารย์ให้ตอนเลิกคลาสมาหาว่าทำยังไงถึงจะไม่เกิน100% Compilerทำแบบฝึกหัด2อัน Securityยังไม่มีนะ AIอ่านทวนวันศุกร์จะมีควิซ และก็โปรเจคจบจ้าา";
+        $array = explode(" ",$str);
+        $arrlength = count($array);
+        for($x = 0; $x<$arrlength; $x++){
+            $array[$x];
+            $arrayPostData['messages'][0]['text'] =  "<br>";
+        }
+         replyMsg($arrayHeader,$arrayPostData);
       } 
     else if($arrayJson['events'][0]['message']['text'] == "Combus" || $arrayJson['events'][0]['message']['text'] ==  "combus" || $arrayJson['events'][0]['message']['text'] ==  "คอมบัส"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
