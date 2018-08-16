@@ -17,8 +17,7 @@
         $array = explode(" ",$str);
         $arrlength = count($array);
         for($x = 0; $x<$arrlength; $x++){
-            $array[$x];
-            $arrayPostData['messages'][0]['text'] =  "<br>";
+            $arrayPostData['messages'][0]['text'] = $array[$x];
             replyMsg($arrayHeader,$arrayPostData);
         }
       } 
