@@ -119,6 +119,18 @@
 //       else if($arrayJson['events'][0]['source']['userId'] == "Ud1794d48c4e3dd1f68cf78f76447f305"){
           
 //       }
+        else if($arrayJson['events'][0]['message']['text'] == "hint" || $arrayJson['events'][0]['message']['text'] == "Hint" || $arrayJson['events'][0]['message']['text'] == "ช่วยเหลือ"){
+            $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+            $arrayPostData['messages'][0]['type'] = "text";
+            $str = "บอท การบ้าน ด่าแพท ด่าแจม !p potato !p Potato !p โปเตโต้  ประโยคที่มีคำว่าโง่ ชื่อวิชาที่เรียน";
+            $array = explode(" ",$str);
+            $arrlength = count($array);
+            for($x = 0; $x<$arrlength; $x++){
+                $arrayPostData['messages'][0]['text'] = $arrayPostData['messages'][0]['text']."\n".$array[$x] ;
+            }
+            replyMsg($arrayHeader,$arrayPostData);
+        }
+            
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
         $ch = curl_init();
