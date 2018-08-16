@@ -48,7 +48,7 @@
     else if($arrayJson['events'][0]['message']['text'] == "AI" || $arrayJson['events'][0]['message']['text'] ==  "ai" || $arrayJson['events'][0]['message']['text'] ==  "เอไอ"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "AI อ่านทวนวันศุกร์จะมีควิซ";
+        $arrayPostData['messages'][0]['text'] = "AI คือสิ่งที่มนุษย์สร้างขึ้นโดยมีพฤติกรรมเลียนแบบธรรมชาติ ในการสร้างAIต้องมีความรู้ทางด้านวิศวกรรมและวิทยาศาสตร์";
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($arrayJson['events'][0]['message']['text'] == "บอท" && $arrayJson['events'][0]['source']['userId']=="Ue14f54b7c3fe3f2219a3f42c016ab3a7"){
