@@ -93,9 +93,8 @@
     }
     else if(strstr($message,"!พี่ตูน" || strstr($message,"!Bodyslam") || strstr($message,"!bodyslam")){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "video";
         <iframe width="50" height="50"
-            $arrayPostData['messages'][0]['originalContentUrl'] = "https://www.youtube.com/embed/yf5JZDCXLG8&list?autoplay=1">
+            src = "https://www.youtube.com/embed/yf5JZDCXLG8&list?autoplay=1">
         </iframe>
         replyMsg($arrayHeader,$arrayPostData);
     }
