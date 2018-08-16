@@ -93,9 +93,9 @@
     }
     else if(strstr($message,"!พี่ตูน" || strstr($message,"!Bodyslam") || strstr($message,"!bodyslam")){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        <iframe width="50" height="50"
-            src = "https://www.youtube.com/embed/yf5JZDCXLG8&list?autoplay=1">
-        </iframe>
+        $arrayPostData['messages'][0]['type'] = "video";
+        $arrayPostData['messages'][0]['originalContentUrl'] = "https://www.youtube.com/embed/yf5JZDCXLG8&list?autoplay=1";
+        $arrayPostData['messages'][0]['previewImageUrl'] = "";
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($arrayJson['events'][0]['message']['text'] == "วันนี้วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วันอะไร" || $arrayJson['events'][0]['message']['text'] == "วัน"){
