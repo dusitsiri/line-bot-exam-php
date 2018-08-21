@@ -10,42 +10,44 @@
     
     //รับข้อความจากผู้ใช้
     $message = $arrayJson['events'][0]['message']['text'];
-//     if($arrayJson['events'][0]['message']['text'] == "การบ้าน"){
-//         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-//         $arrayPostData['messages'][0]['type'] = "text";
-//         $str = "การบ้าน: คอมบัสโปรเจคกลุ่มเขียนแบบ IQMหารหัสประเทศฯลฯ+เอาเลขที่อาจารย์ให้ตอนเลิกคลาสมาหาว่าทำยังไงถึงจะไม่เกิน100% Compilerทำแบบฝึกหัด2อัน Securityยังไม่มีนะ AIอ่านทวนวันศุกร์จะมีควิซ และก็โปรเจคจบจ้าา";
-//         $array = explode(" ",$str);
-//         $arrlength = count($array);
-//         for($x = 0; $x<$arrlength; $x++){
-//             $arrayPostData['messages'][0]['text'] = $arrayPostData['messages'][0]['text']."\n".$array[$x] ;
-//         }
-//          replyMsg($arrayHeader,$arrayPostData);
-//       } 
-    if($arrayJson['events'][0]['message']['text'] == "การบ้าน" || $arrayJson['events'][0]['message']['text'] == "Combus" || $arrayJson['events'][0]['message']['text'] ==  "combus" || $arrayJson['events'][0]['message']['text'] ==  "คอมบัส"){
+    if($arrayJson['events'][0]['message']['text'] == "การบ้าน"){
+        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
+        $arrayPostData['messages'][0]['type'] = "text";
+        $str = "การบ้าน: คอมบัส โปรเจคกลุ่มเขียนแบบ ตอนนี้ได้Schemaแล้วต้องแจงงานให้เพื่อนในกลุ่มทราบทั่วกัน 
+        IQMหารหัสประเทศฯลฯ+เอาเลขที่อาจารย์ให้ตอนเลิกคลาสมาหาว่าทำยังไงถึงจะไม่เกิน100% 
+        Compilerทำแบบฝึกหัด2อันต้องถามแจมไม่ก็แพทว่าอันไหน Securityยังไม่มีนะ จดในห้องอย่างเดียว AIอ่านทวนวันศุกร์จะมีควิซ และก็โปรเจคจบจ้าา";
+        $array = explode(" ",$str);
+        $arrlength = count($array);
+        for($x = 0; $x<$arrlength; $x++){
+            $arrayPostData['messages'][0]['text'] = $arrayPostData['messages'][0]['text']."\n".$array[$x] ;
+        }
+         replyMsg($arrayHeader,$arrayPostData);
+      } 
+    else if($arrayJson['events'][0]['message']['text'] == "Combus" || $arrayJson['events'][0]['message']['text'] ==  "combus" || $arrayJson['events'][0]['message']['text'] ==  "คอมบัส"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "คอมบัส โปรเจคกลุ่มเขียนแบบ ตอนนี้ได้ Schema แล้วต้องแจงงานให้เพื่อนในกลุ่มทราบทั่วกัน";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    if($arrayJson['events'][0]['message']['text'] == "การบ้าน" || $arrayJson['events'][0]['message']['text'] == "IQM" || $arrayJson['events'][0]['message']['text'] ==  "iqm"){
+    else if($arrayJson['events'][0]['message']['text'] == "IQM" || $arrayJson['events'][0]['message']['text'] ==  "iqm"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "IQM หารหัสประเทศฯลฯ + เอาเลขที่อาจารย์ให้ตอนเลิกคลาสมาหาว่าทำยังไงถึงจะไม่เกิน100%";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    if($arrayJson['events'][0]['message']['text'] == "การบ้าน" || $arrayJson['events'][0]['message']['text'] == "Compiler" || $arrayJson['events'][0]['message']['text'] ==  "compiler" || $arrayJson['events'][0]['message']['text'] ==  "คอมไพ"){
+    else if($arrayJson['events'][0]['message']['text'] == "Compiler" || $arrayJson['events'][0]['message']['text'] ==  "compiler" || $arrayJson['events'][0]['message']['text'] ==  "คอมไพ"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Compiler ทำแบบฝึกหัด2อันต้องถามแจมไม่ก็แพทว่าอันไหน";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    if($arrayJson['events'][0]['message']['text'] == "การบ้าน" || $arrayJson['events'][0]['message']['text'] == "Secure" || $arrayJson['events'][0]['message']['text'] ==  "secure" || $arrayJson['events'][0]['message']['text'] ==  "Security" || $arrayJson['events'][0]['message']['text'] ==  "security" || $arrayJson['events'][0]['message']['text'] ==  "ซีเคียว"){
+    else if($arrayJson['events'][0]['message']['text'] == "Secure" || $arrayJson['events'][0]['message']['text'] ==  "secure" || $arrayJson['events'][0]['message']['text'] ==  "Security" || $arrayJson['events'][0]['message']['text'] ==  "security" || $arrayJson['events'][0]['message']['text'] ==  "ซีเคียว"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "Security ยังไม่มีนะ จดในห้องอย่างเดียว";
         replyMsg($arrayHeader,$arrayPostData);
     }
-    if($arrayJson['events'][0]['message']['text'] == "การบ้าน" || $arrayJson['events'][0]['message']['text'] == "AI" || $arrayJson['events'][0]['message']['text'] ==  "ai" || $arrayJson['events'][0]['message']['text'] ==  "เอไอ"){
+    else if($arrayJson['events'][0]['message']['text'] == "AI" || $arrayJson['events'][0]['message']['text'] ==  "ai" || $arrayJson['events'][0]['message']['text'] ==  "เอไอ"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "AI อ่านทวนมีควิซยากนะ";
