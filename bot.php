@@ -56,7 +56,7 @@
     else if($arrayJson['events'][0]['message']['text'] == "บอท" && $arrayJson['events'][0]['source']['userId']=="Ue14f54b7c3fe3f2219a3f42c016ab3a7"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ครับ อย่าลืมปริ้นชีทมาอ่านด้วยครับ";
+        $arrayPostData['messages'][0]['text'] = "ครับ";
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($arrayJson['events'][0]['message']['text'] == "ด่าแจม" && $arrayJson['events'][0]['source']['userId']=="Ue14f54b7c3fe3f2219a3f42c016ab3a7"){
