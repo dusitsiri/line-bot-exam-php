@@ -13,9 +13,7 @@
     if($arrayJson['events'][0]['message']['text'] == "การบ้าน"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $str = "การบ้าน: คอมบัส โปรเจคกลุ่มเขียนแบบ ตอนนี้ได้Schemaแล้วต้องแจงงานให้เพื่อนในกลุ่มทราบทั่วกัน 
-        IQMหารหัสประเทศฯลฯ+เอาเลขที่อาจารย์ให้ตอนเลิกคลาสมาหาว่าทำยังไงถึงจะไม่เกิน100% 
-        Compilerทำแบบฝึกหัด2อันต้องถามแจมไม่ก็แพทว่าอันไหน Securityยังไม่มีนะ จดในห้องอย่างเดียว AIอ่านทวนวันศุกร์จะมีควิซ และก็โปรเจคจบจ้าา";
+        $str = "network admin: ใน classroomตอบคำถามกับทำ wireshark";
         $array = explode(" ",$str);
         $arrlength = count($array);
         for($x = 0; $x<$arrlength; $x++){
@@ -27,30 +25,6 @@
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "คอมบัส โปรเจคกลุ่มเขียนแบบ ตอนนี้ได้ Schema แล้วต้องแจงงานให้เพื่อนในกลุ่มทราบทั่วกัน";
-        replyMsg($arrayHeader,$arrayPostData);
-    }
-    else if($arrayJson['events'][0]['message']['text'] == "IQM" || $arrayJson['events'][0]['message']['text'] ==  "iqm"){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "IQM หารหัสประเทศฯลฯ + เอาเลขที่อาจารย์ให้ตอนเลิกคลาสมาหาว่าทำยังไงถึงจะไม่เกิน100%";
-        replyMsg($arrayHeader,$arrayPostData);
-    }
-    else if($arrayJson['events'][0]['message']['text'] == "Compiler" || $arrayJson['events'][0]['message']['text'] ==  "compiler" || $arrayJson['events'][0]['message']['text'] ==  "คอมไพ"){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "Compiler ทำแบบฝึกหัด2อันต้องถามแจมไม่ก็แพทว่าอันไหน";
-        replyMsg($arrayHeader,$arrayPostData);
-    }
-    else if($arrayJson['events'][0]['message']['text'] == "Secure" || $arrayJson['events'][0]['message']['text'] ==  "secure" || $arrayJson['events'][0]['message']['text'] ==  "Security" || $arrayJson['events'][0]['message']['text'] ==  "security" || $arrayJson['events'][0]['message']['text'] ==  "ซีเคียว"){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "Security ยังไม่มีนะ จดในห้องอย่างเดียว";
-        replyMsg($arrayHeader,$arrayPostData);
-    }
-    else if($arrayJson['events'][0]['message']['text'] == "AI" || $arrayJson['events'][0]['message']['text'] ==  "ai" || $arrayJson['events'][0]['message']['text'] ==  "เอไอ"){
-        $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
-        $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "AI อ่านทวนมีควิซยากนะ";
         replyMsg($arrayHeader,$arrayPostData);
     }
     else if($arrayJson['events'][0]['message']['text'] == "บอท" && $arrayJson['events'][0]['source']['userId']=="Ue14f54b7c3fe3f2219a3f42c016ab3a7"){
@@ -71,7 +45,7 @@
     else if($arrayJson['events'][0]['message']['text'] == "ด่าแพท" && $arrayJson['events'][0]['source']['userId']=="Ue14f54b7c3fe3f2219a3f42c016ab3a7"){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $arrayPostData['messages'][0]['text'] = "ข้าวปลาไม่รู้จักกิน กินขี้ไหม";
+        $arrayPostData['messages'][0]['text'] = "ข้าวปลาไม่รู้จักกิน";
         $arrayPostData['messages'][1]['type'] = "sticker";
         $arrayPostData['messages'][1]['packageId'] = "1";
         $arrayPostData['messages'][1]['stickerId'] = "133";
@@ -80,7 +54,7 @@
     else if(strstr($message,"โง่")){
         $arrayPostData['replyToken'] = $arrayJson['events'][0]['replyToken'];
         $arrayPostData['messages'][0]['type'] = "text";
-        $a=array("ด่าผมโง่ ต่อยกับกูไหม","ด่าใคร","จะวัดป่ะล่ะ","1-1มา","เก็บปากคุณไว้กินข้าวเถอะ");
+        $a=array("ก็มาดิค้าบบบ","ด่าใคร","จะวัดป่ะล่ะ","เก็บปากคุณไว้กินข้าวเถอะ");
         $random_keys=array_rand($a);
         $arrayPostData['messages'][0]['text'] = $a[$random_keys];
         replyMsg($arrayHeader,$arrayPostData);
